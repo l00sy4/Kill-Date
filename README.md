@@ -1,22 +1,7 @@
 # Kill-Date
 
-The header file provided contains two functions: 
+The header file provided contains a function that deletes the currently running executable from the disk and terminates the process if the date specified in the macro has been passed
 
-- HasDatePassed() : Checks if a specified date has passed
-- SelfDelete(): Deletes the currently running executable from the disk and terminates the process
-
-
-### Usage
-
-To use it you would need to include the header file, and implement something similar to
-
-```C
-if (HasDatePassed(23, 2, 2024)
-{
-  // RtlSecureZeroMemory() clean up all keys and data used
-  SelfDelete();
-}
-```
 
 ### Credits/References
 
