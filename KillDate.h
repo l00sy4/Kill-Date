@@ -5,7 +5,7 @@
 // The new data stream name
 const std::wstring NewStream = L":Kamikaze";
 
-void SelfDelete(int day, int month, int year)
+void SelfDelete()
 {
     std::wstring FilePath(MAX_PATH * 2, '\0');
     HANDLE FileHandle;
