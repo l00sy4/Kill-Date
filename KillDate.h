@@ -50,7 +50,7 @@ void SelfDelete()
         delete[] RenameInfoPointer;
 
         // Terminate process
-        ExitProcess(0);
+        exit();
     }
     else
     {
