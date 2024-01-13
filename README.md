@@ -18,9 +18,6 @@ if (HasDatePassed(23, 2, 2024)
 }
 ```
 
-### To-do
-- Replace HasDatePassed() with a macro
-
 ### Credits/References
 
 - Initial concept discovered by [Jonas Lykkegaard](https://twitter.com/jonasLyk)
