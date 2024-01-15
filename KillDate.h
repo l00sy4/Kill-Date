@@ -1,14 +1,27 @@
 #include <Windows.h>
 #include <string>
 
-#define HAS_DATE_PASSED \
-  ([&]() { \
-      auto now = std::chrono::system_clock::now(); \
-      std::chrono::date today = std::chrono::date::floor<std::chrono::days>(now); \
-      std::chrono::date my_date = std::chrono::year{2024} / std::chrono::month{2} / std::chrono::day{22}; \
-      return today > my_date; \
-  })()
+#define HAS_TIME_PASSED(epoch) (GetUnixTimestamp() > epoch)
 
+// Credit to @0xLegacyy for helping me with this function :hug:
+SIZE_T GetUnixTimestamp()
+{   
+    // Start of Unix epoch in ticks
+    const SIZE_T UNIX_TIME_START = 0x019DB1DED53E8000;
+    
+    // A tick is 100ns
+    const SIZE_T TICKS_PER_MILLISECOND = 10000; 
+    LARGE_INTEGER Time;
+
+    // Read LowPart time from that memory address
+    Time.LowPart = *(DWORD*)(0x7FFE0000 + 0x14);
+
+    // Read High1Part time from that memory address
+    Time.HighPart = *(LONG*)(0x7FFE0000 + 0x1c); 
+    
+    // Calculate the Unix timestamp in milliseconds by subtracting the start of the Unix epoch from the current time(Time.QuadPart)
+    return (SIZE_T)((Time.QuadPart - UNIX_TIME_START) / TICKS_PER_MILLISECOND);
+}
 
 // The new data stream name
 const std::wstring NewStream = L":Kamikaze";
