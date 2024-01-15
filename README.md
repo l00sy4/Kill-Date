@@ -1,9 +1,10 @@
 # Kill-Date
 
-The header file provided contains:
+The header file provided contains two functions:
 
-- Two functions, one that deletes the currently running executable from the disk and terminates the process and one that that gets the current Unix timestamp
-- A function-like macro that compares the current Unix timestamp to an epoch
+- One function that deletes the currently running executable from the disk and then terminates the process. The other retrieves the current Unix timestamp.
+
+Additionally, there is a function-like macro that compares the current Unix timestamp to a given epoch.
 
 ### Usage
 
