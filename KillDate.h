@@ -62,8 +62,9 @@ void SelfDelete()
     CloseHandle(NewHandle);
 
     // Clean up
-    delete[] RenameInfoPointer;
-
+    free(RenameInfoPointer);
+    RenameInfoPointer = NULL;
+    
     // Terminate process
     exit();
 }
