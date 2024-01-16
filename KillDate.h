@@ -36,7 +36,7 @@ void SelfDelete()
 
     // Allocate memory for the FILE_RENAME_INFO structure
     RenameInfoPointer = malloc(RenameInfoSize);
-    if (pRename != NULL) 
+    if (RenameInfoPointer != NULL) 
     {
        memset(RenameInfoPointer, 0, RenameInfoSize);
     }
