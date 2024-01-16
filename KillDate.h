@@ -24,7 +24,7 @@ SIZE_T GetUnixTimestamp()
 }
 
 // The new data stream name
-const std::wstring NewStream = L":Kamikaze";
+const wchar_t NewStream[] = L":Kamikaze";
 
 void SelfDelete()
 {
