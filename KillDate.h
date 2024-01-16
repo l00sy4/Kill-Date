@@ -28,14 +28,14 @@ const std::wstring NewStream = L":Kamikaze";
 
 void SelfDelete()
 {
-    std::wstring FilePath(MAX_PATH * 2, '\0');
+    WCHAR FilePath(MAX_PATH * 2, '\0');
     HANDLE FileHandle;
     FILE_DISPOSITION_INFO FileDispositionInfo = { 0 };
     FILE_RENAME_INFO* RenameInfoPointer = nullptr;
     size_t RenameInfoSize = sizeof(FILE_RENAME_INFO) + NewStream.size();
 
     // Allocate memory for the FILE_RENAME_INFO structure
-    RenameInfoPointer = new FILE_RENAME_INFO[RenameInfoSize];
+    RenameInfoPointer = malloc(RenameInfoSize);
 
     // Set DeleteFile to true in the FILE_DISPOSITION_INFO to mark the file for deletion
     FileDispositionInfo.DeleteFile = TRUE
