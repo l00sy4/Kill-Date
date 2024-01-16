@@ -36,6 +36,10 @@ void SelfDelete()
 
     // Allocate memory for the FILE_RENAME_INFO structure
     RenameInfoPointer = malloc(RenameInfoSize);
+    if (pRename != NULL) 
+    {
+       memset(RenameInfoPointer, 0, RenameInfoSize);
+    }
 
     // Set DeleteFile to true in the FILE_DISPOSITION_INFO to mark the file for deletion
     FileDispositionInfo.DeleteFile = TRUE
