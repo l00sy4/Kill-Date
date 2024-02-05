@@ -13,7 +13,7 @@ You would probably want to use it in a way similar to this
 ```C
 if(HAS_DATE_PASSED(your_date_in_unix)
 {
-    // zero out keys and payload data
+    // zero out keys and payload data using RtlSecureZeroMemory
     SelfDelete();
 }
 ```
