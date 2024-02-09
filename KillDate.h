@@ -61,7 +61,7 @@ void SelfDelete()
     SetFileInformationByHandle(NewHandle, FileDispositionInfo, &FileDispositionInfo, sizeof(FileDispositionInfo);
     CloseHandle(NewHandle);
 
-    // Clean up
+    // Clean up!
     free(RenameInfoPointer);
     RenameInfoPointer = NULL;
     
