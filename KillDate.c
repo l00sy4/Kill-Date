@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include <string>
 
 #define HAS_TIME_PASSED(epoch) (GetUnixTimestamp() > epoch)
 
